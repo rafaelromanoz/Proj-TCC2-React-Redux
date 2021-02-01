@@ -1,21 +1,19 @@
-const nodeRestful = require('node-restful')
+  
+const _ = require('lodash')
 
-const_=require('lodash')
+module.exports = (req, res, next) => {
+    const bundle = res.locals.bundle
 
-module.exports=(req,res,next)=>{
-    const bundle=res.locals.bundle
-
-    if(bundle.errors){
-        const errors=parseErrors(bundle.errors)
+    if(bundle.errors) {
+        const errors = parseErrors(bundle.errors)
         res.status(500).json({errors})
-
-    }else{
+    } else {
         next()
     }
 }
 
-const parseErrors=(nodeRestfulErrors)=>{
-    const errors=[]
-    _.forIn(nodeRestfulErrors,error=>errors.push(error.message))
-    return errors
+const parseErrors = (nodeRestfulErrors) => {
+    const errors = []
+    _.forIn(nodeRestfulErrors, error => errors.push(error.message))
+    return errors 
 }
