@@ -11,14 +11,7 @@ module.exports = {
         port: 8080,
         contentBase: './public',
     },
-    resolve: {
-        extensions: ['', '.js', '.jsx'],
-        alias: {
-            modules: __dirname + '/node_modules',
-            jquery: 'modules/admin-lte/plugins/jQuery/jquery-2.2.3.min.js',
-            bootstrap: 'modules/admin-lte/bootstrap/js/bootstrap.js'
-        }
-    },
+  
     plugins: [ 
         new webpack.ProvidePlugin({
             $: 'jquery',
