@@ -1,0 +1,69 @@
+{
+  "users": [
+    {
+      "name": "Rafael",
+      "email": "rafa-kun@hotmail.com",
+      "endereco": "Rua Benedito geraldo da silveira 28",
+      "telefone": "35991516485",
+      "cpf": "12150082608",
+      "cro": "",
+      "cnpj": "4554852",
+      "id": 1
+    },
+    {
+      "name": "Rafael",
+      "email": "",
+      "endereco": "",
+      "telefone": "",
+      "cpf": "",
+      "cro": "",
+      "id": 2
+    },
+    {
+      "name": "",
+      "email": "",
+      "endereco": "",
+      "telefone": "",
+      "cpf": "",
+      "cro": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "email": "",
+      "endereco": "",
+      "telefone": "",
+      "cpf": "",
+      "cro": "",
+      "id": 4
+    },
+    {
+      "name": "",
+      "email": "",
+      "endereco": "",
+      "telefone": "",
+      "cpf": "",
+      "cro": "",
+      "id": 5
+    }
+  ],
+  "servicos": [
+    {
+      "tipo": "Prótese total",
+      "preco": "60",
+      "id": 1
+    }
+  ],
+  "fornecedores": [
+    {
+      "name": "Rafael",
+      "email": "Rafa",
+      "endereco": "werwe",
+      "telefone": "werwer",
+      "cnpj": "werwer",
+      "cro": "wrer",
+      "id": 1
+    }
+  ],
+  "estoque": []
+}

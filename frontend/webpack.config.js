@@ -14,7 +14,7 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.jsx'],
         alias: {
-            modules: __dirname + '/node_modules',
+          modules: __dirname + '/node_modules',
             jquery: 'modules/admin-lte/plugins/jQuery/jquery-2.2.3.min.js',
             bootstrap: 'modules/admin-lte/bootstrap/js/bootstrap.js'
         }
@@ -31,9 +31,10 @@ module.exports = {
         loaders: [{
             test: /.js[x]?$/,
             loader: 'babel-loader',
+            loader:'babel',
             exclude: /node_modules/,
             query: {
-                presets: ['es2015', 'react'],
+                presets: ['es2015', 'react','stage-0'],
                 plugins: ['transform-object-rest-spread']
             }
         }, {
@@ -42,6 +43,25 @@ module.exports = {
         }, {
             test: /\.woff|.woff2|.ttf|.eot|.svg|.png|.jpg*.*$/,
             loader: 'file'
-        }]
-    }
-}
+        }],
+       
+            test: /\.(scss)$/,
+            use: [{
+              loader: 'style-loader', // injeta CSS na página
+            }, {
+              loader: 'css-loader', // traduz CSS em módulos commonJS
+            }, {
+              loader: 'postcss-loader', // Executa tarefas do postcss
+              options: {
+                plugins: function () { // plugins postcss, podem ser exportados para o postcss.config.js
+                  return [
+                    require('precss'),
+                    require('autoprefixer')
+                  ];
+                }
+              }
+            }, {
+              loader: 'sass-loader' // compila Sass em CSS
+            }]
+          }
+        } 

@@ -10,5 +10,10 @@ module.exports = function(server) {
     const BillingCycle = require('../api/billingCycle/billingCycleService')
     BillingCycle.register(router, '/billingCycles')
 
+    // Rotas de Cadastro
+
+    const cadastroSchema=require('../api/billingCycle/cadastroService')
+    cadastroSchema.register(router,'/cadastro')
+
     
 }
