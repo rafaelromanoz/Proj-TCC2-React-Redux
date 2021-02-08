@@ -5,13 +5,13 @@ import ContentHeader from '../common/template/contentHeader'
 
 
 
-const baseURL = 'http://localhost:3001/users'
+const baseURL = 'http://localhost:3001/fornecedores'
 const initialState={
-    user:{name:'',email:'',endereco:'',telefone:'',cpf:'',cro:''},
+    user:{name:'',email:'',endereco:'',telefone:'',cnpj:'',cro:''},
     list:[]
 }
 
-export default class UserCrud extends Component{
+export default class Fornecedores extends Component{
 
     state={...initialState}
 
@@ -57,13 +57,13 @@ export default class UserCrud extends Component{
         return (
             
             <div className="form">
-                <ContentHeader title='Cadastro de clientes' small='Inclusão,listagem,alteração e exclusão' />
+                <ContentHeader title='Cadastro de fornecedores' small='Inclusão,listagem,alteração e exclusão' />
                 <h1></h1>
 
                 <div className="row">
                     <div className="col-12 col-md-6">
                         <div className="form-group">
-                           <label>Nome</label>
+                           <label>Denominação Social</label>
                             <input type="text" className="form-control"
                                 name="name"
                                 value={this.state.user.name}
@@ -106,12 +106,12 @@ export default class UserCrud extends Component{
                     </div>
                     <div className="col-12 col-md-6">
                     <div className="form-group">
-                        <label>CPF</label>
+                        <label>CPF/CNPJ</label>
                         <input type="text" className="form-control"
-                        name="cpf"
-                        value={this.state.user.cpf}
+                        name="cnpj"
+                        value={this.state.user.cnpj}
                         onChange={e=>this.updateField(e)}
-                        placeholder="Digite o CPF "/>
+                        placeholder="Digite o CPF/CNPJ "/>
 
                         </div>
                         </div>
@@ -121,7 +121,7 @@ export default class UserCrud extends Component{
                         <label>CRO</label>
                         <input type="text" className="form-control"
                         name="cro"
-                        value={this.state.user.cnpj}
+                        value={this.state.user.cro}
                         onChange={e=>this.updateField(e)}
                         placeholder="Digite o CRO "/>
 
@@ -152,7 +152,7 @@ export default class UserCrud extends Component{
                         <th>E-mail</th>
                         <th>Endereço</th>
                         <th>Telefone</th>
-                        <th>CPF</th>
+                        <th>CPF/CNPJ</th>
                         <th>CRO</th>
                         <th>Ações</th>
                     </tr>
@@ -187,7 +187,7 @@ export default class UserCrud extends Component{
                         <th>E-mail</th>
                         <th>Endereço</th>
                         <th>Telefone</th>
-                        <th>CPF</th>
+                        <th>CPF/CNPJ</th>
                         <th>CRO</th>
                         <th>Ações</th>
                     </tr>
@@ -208,7 +208,7 @@ export default class UserCrud extends Component{
                    <td>{user.email}</td>
                    <td>{user.endereco}</td>
                    <td>{user.telefone}</td>
-                   <td>{user.cpf}</td>
+                   <td>{user.cnpj}</td>
                    <td>{user.cro}</td>
                    <td>
                        <button className="btn btn-warning"

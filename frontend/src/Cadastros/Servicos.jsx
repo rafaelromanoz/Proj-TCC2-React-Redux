@@ -5,13 +5,13 @@ import ContentHeader from '../common/template/contentHeader'
 
 
 
-const baseURL = 'http://localhost:3001/users'
+const baseURL = 'http://localhost:3001/servicos'
 const initialState={
-    user:{name:'',email:'',endereco:'',telefone:'',cpf:'',cro:''},
+    user:{tipo:'',preco:''},
     list:[]
 }
 
-export default class UserCrud extends Component{
+export default class Servicos extends Component{
 
     state={...initialState}
 
@@ -57,76 +57,34 @@ export default class UserCrud extends Component{
         return (
             
             <div className="form">
-                <ContentHeader title='Cadastro de clientes' small='Inclusão,listagem,alteração e exclusão' />
+                <ContentHeader title='Cadastro de serviços' small='Inclusão,listagem,alteração e exclusão' />
                 <h1></h1>
 
                 <div className="row">
                     <div className="col-12 col-md-6">
                         <div className="form-group">
-                           <label>Nome</label>
+                           <label>Tipo</label>
                             <input type="text" className="form-control"
-                                name="name"
-                                value={this.state.user.name}
+                                name="tipo"
+                                value={this.state.user.tipo}
                                 onChange={e => this.updateField(e)}
-                                placeholder="Digite o nome..." />
+                                placeholder="Digite o tipo do serviço..." />
                         </div>
                     </div>
 
                     <div className="col-12 col-md-6">
                         <div className="form-group">
-                            <label>E-mail</label>
-                            <input type="email" className="form-control"
-                                name="email"
+                            <label>Preço</label>
+                            <input type="number" className="form-control"
+                                name="preco"
                                 value={this.state.user.email}
                                 onChange={e => this.updateField(e)}
-                                placeholder="Digite o e-mail..." />
+                                placeholder="Digite o preço do serviço..." />
                         </div>
                     </div>
-                    <div className="col-12 col-md-6">
-                    <div className="form-group">
-                        <label>Endereço</label>
-                        <input type="text"className="form-control"
-                        name="endereco"
-                        value={this.state.user.endereco}
-                        onChange={e=>this.updateField(e)}
-                        placeholder="Digite o Endereço"/>
-                    </div>
-                    </div>
-                    <div className="col-12 col-md-6">
-                    <div className="form-group">
-                        <label>Telefone</label>
-                        <input type="tel" className="form-control"
-                        name="telefone"
-                        value={this.state.user.telefone}
-                        onChange={e=>this.updateField(e)}
-                        placeholder="Digite o telefone"/>
+                    
 
-                        </div>
-
-                    </div>
-                    <div className="col-12 col-md-6">
-                    <div className="form-group">
-                        <label>CPF</label>
-                        <input type="text" className="form-control"
-                        name="cpf"
-                        value={this.state.user.cpf}
-                        onChange={e=>this.updateField(e)}
-                        placeholder="Digite o CPF "/>
-
-                        </div>
-                        </div>
-
-                        <div className="col-12 col-md-6">
-                    <div className="form-group">
-                        <label>CRO</label>
-                        <input type="text" className="form-control"
-                        name="cro"
-                        value={this.state.user.cnpj}
-                        onChange={e=>this.updateField(e)}
-                        placeholder="Digite o CRO "/>
-
-                        </div>
-                        </div>
+                        
                 </div>
 
                 <hr />
@@ -148,14 +106,9 @@ export default class UserCrud extends Component{
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Endereço</th>
-                        <th>Telefone</th>
-                        <th>CPF</th>
-                        <th>CRO</th>
-                        <th>Ações</th>
-                    </tr>
+                        <th>Tipo</th>
+                        <th>Preço</th>
+                        </tr>
                 </thead>
                 <tbody>
                     {this.renderRows()}
@@ -183,13 +136,9 @@ export default class UserCrud extends Component{
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Endereço</th>
-                        <th>Telefone</th>
-                        <th>CPF</th>
-                        <th>CRO</th>
-                        <th>Ações</th>
+                        <th>Tipo</th>
+                        <th>Preço</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -204,12 +153,8 @@ export default class UserCrud extends Component{
             return(
                 <tr key={user.id}>
                    <td>{user.id}</td> 
-                   <td>{user.name}</td> 
-                   <td>{user.email}</td>
-                   <td>{user.endereco}</td>
-                   <td>{user.telefone}</td>
-                   <td>{user.cpf}</td>
-                   <td>{user.cro}</td>
+                   <td>{user.tipo}</td> 
+                   <td>{user.preco} R$</td>
                    <td>
                        <button className="btn btn-warning"
                            onClick={()=>this.load(user)}>

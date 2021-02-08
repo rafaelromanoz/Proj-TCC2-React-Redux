@@ -1,11 +1,11 @@
-import '../common/template/dependencies'
+
 import React from 'react'
 
 import Header from '../common/template/header'
 import SideBar from '../common/template/sideBar'
 import Footer from '../common/template/footer'
 import Messages from '../common/msg/messages'
-
+import UserCrud from '../Cadastros/userCrud'
 
 export default props => (
     <div className='wrapper'>

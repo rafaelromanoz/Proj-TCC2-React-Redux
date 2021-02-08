@@ -1,50 +1,13 @@
 {
   "users": [
     {
-      "name": "Rafael",
+      "name": "Rafael de Oliveira Romano",
       "email": "rafa-kun@hotmail.com",
-      "endereco": "Rua Benedito geraldo da silveira 28",
+      "endereco": "Rua Benedito Geraldo da Silveira 28",
       "telefone": "35991516485",
       "cpf": "12150082608",
-      "cro": "",
-      "cnpj": "4554852",
+      "cro": "5544",
       "id": 1
-    },
-    {
-      "name": "Rafael",
-      "email": "",
-      "endereco": "",
-      "telefone": "",
-      "cpf": "",
-      "cro": "",
-      "id": 2
-    },
-    {
-      "name": "",
-      "email": "",
-      "endereco": "",
-      "telefone": "",
-      "cpf": "",
-      "cro": "",
-      "id": 3
-    },
-    {
-      "name": "",
-      "email": "",
-      "endereco": "",
-      "telefone": "",
-      "cpf": "",
-      "cro": "",
-      "id": 4
-    },
-    {
-      "name": "",
-      "email": "",
-      "endereco": "",
-      "telefone": "",
-      "cpf": "",
-      "cro": "",
-      "id": 5
     }
   ],
   "servicos": [
