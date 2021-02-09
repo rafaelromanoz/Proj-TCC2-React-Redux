@@ -1,5 +1,6 @@
 import React from 'react'
-import { Router, Route, IndexRoute, Redirect, hashHistory } from 'react-router'
+import {Switch,Route,Redirect} from 'react-router'
+
 
 import AuthOrApp from './authOrApp'
 import Dashboard from '../dashboard/dashboard'
@@ -9,15 +10,14 @@ import Fornecedores from '../Cadastros/Fornecedores'
 import Servicos from '../Cadastros/Servicos'
 
 export default props => (
-    <Router history={hashHistory}>
-        <Route path='/' component={AuthOrApp}>
-            <IndexRoute component={Dashboard} />
-            <Route path='billingCycles' component={BillingCycle} />
-            <Route path='userCrud' component={UserCrud}/>
-            <Route path='Servicos' component={Servicos}/>  
-            <Route path='Fornecedores' component={Fornecedores}/>
-                  
-        <Redirect from='*' to='/' />
-        </Route>
-    </Router>
+   <div className='content-wrapper'>
+       <Switch>
+       <Route exact path='/' component={Dashboard}/>
+       <Route path='/billingCycles' component={BillingCycle}/>
+       <Route path='/userCrud' component={UserCrud}/>
+       <Route path='/Fornecedores' component={Fornecedores}/>
+       <Route path='/Servicos' component={Servicos}/>
+       <Redirect from='*' to='/'/>
+       </Switch>
+   </div>
 )

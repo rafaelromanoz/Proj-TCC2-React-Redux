@@ -14,3 +14,6 @@ button {
 .wrapper{
     background-color: aquamarine;
 }
+.content{
+    width: 100%;
+}
